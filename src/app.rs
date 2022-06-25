@@ -1,5 +1,4 @@
 pub struct BiomorphApp {
-    label: String,
     columns: u8,
     rows: u8,
 }
@@ -7,7 +6,6 @@ pub struct BiomorphApp {
 impl Default for BiomorphApp {
     fn default() -> Self {
         Self {
-            label: "Biomorph evolve".to_owned(),
             columns: 3,
             rows: 3,
         }
@@ -25,7 +23,7 @@ impl BiomorphApp {
 
 impl eframe::App for BiomorphApp {
     /// Called each time the UI needs repainting, which may be many times per second.
-    fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
+    fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
 
         egui::SidePanel::left("side_panel").show(ctx, |ui| {
             ui.heading("Welcome to Biomorph evolve");
@@ -42,8 +40,8 @@ impl eframe::App for BiomorphApp {
             });
         });
 
-        egui::CentralPanel::default().show(ctx, |ui| {
-
-        });
+        // egui::CentralPanel::default().show(ctx, |ui| {
+        //
+        // });
     }
 }
