@@ -5,8 +5,6 @@ version = "0.1.0"
 authors = ["ScratchX98 <scratchx@gmx.com>"]
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [[bin]]
 name = "biomorph_rs_bin"
 path = "src/main.rs"
@@ -14,11 +12,11 @@ path = "src/main.rs"
 [lib]
 crate-type = ["cdylib", "rlib"]
 
-
 [dependencies]
+rand = "0.8.5"
 egui = "0.18.0"
 eframe = { version = "0.18.0", features = ["persistence"] }
-serde = { version = "1", features = ["derive"] } # You only need this if you want app persistence
+# serde = { version = "1", features = ["derive"] } # You only need this if you want app persistence
 
 # native:
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
@@ -32,14 +30,3 @@ tracing-wasm = "0.2"
 
 [profile.release]
 opt-level = 2 # fast and small wasm
-
-
-[patch.crates-io]
-
-# If you want to use the bleeding edge version of egui and eframe:
-# egui = { git = "https://github.com/emilk/egui", branch = "master" }
-# eframe = { git = "https://github.com/emilk/egui", branch = "master" }
-
-# If you fork https://github.com/emilk/egui you can test with:
-# egui = { path = "../egui/egui" }
-# eframe = { path = "../egui/eframe" }

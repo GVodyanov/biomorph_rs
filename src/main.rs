@@ -9,8 +9,8 @@ fn main() {
 
     let native_options = eframe::NativeOptions::default();
     eframe::run_native(
-        "eframe template",
+        "Biomorph",
         native_options,
-        Box::new(|cc| Box::new(biomorph_rs::TemplateApp::new(cc))),
+        Box::new(|cc| Box::new(biomorph_rs::BiomorphApp::new())),
     );
 }
